@@ -7,8 +7,8 @@
 <body>
   <h2>Login Form</h2>
   <form onsubmit="return login()">
-    Username: <input type="text" id="username"><br><br>
-    Password: <input type="password" id="password"><br><br>
+    Username: <input type="text" id="username" placeholder="Enter username"><br><br>
+    Password: <input type="password" id="password" placeholder="Enter password"><br><br>
     <input type="submit" value="Login">
   </form>
 
@@ -19,15 +19,17 @@
       const username = document.getElementById("username").value;
       const password = document.getElementById("password").value;
 
-      // Simple hardcoded credentials (for demo only)
-      if (username === "admin" && password === "1234") {
+      if (username === "shreyas" && password === "kulkarni") {
         document.getElementById("message").innerText = "Login successful!";
+        document.getElementById("message").style.color = "green";
       } else {
-        document.getElementById("message").innerText = "Invalid credentials.";
+        document.getElementById("message").innerText = "Invalid username or password.";
+        document.getElementById("message").style.color = "red";
       }
 
-      return false; // Prevent form submission
+      return false; // prevent form submission to keep on same page
     }
   </script>
 </body>
 </html>
+
