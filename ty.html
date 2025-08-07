@@ -1,33 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Simple Login</title>
+  <title>HTTP Login</title>
 </head>
 <body>
-  <h2>Login Form</h2>
-  <form onsubmit="return login()">
-    Username: <input type="text" id="username" placeholder="Enter username"><br><br>
-    Password: <input type="password" id="password" placeholder="Enter password"><br><br>
+  <h2>Login Form (HTTP)</h2>
+
+  <form method="POST" action="http://127.0.0.1:8080/login">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" value="shreyas"><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" value="kulkarni"><br><br>
+
     <input type="submit" value="Login">
   </form>
-
-  <p id="message"></p>
-
-  <script>
-    function login() {
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-
-      if (username === "shreyas" && password === "kulkarni") {
-        document.getElementById("message").innerText = "Login successful!";
-        document.getElementById("message").style.color = "green";
-      } else {
-        document.getElementById("message").innerText = "Invalid username or password.";
-        document.getElementById("message").style.color = "red";
-      }
-
-      return false; // Prevent form submission and page reload
-    }
-  </script>
 </body>
 </html>
